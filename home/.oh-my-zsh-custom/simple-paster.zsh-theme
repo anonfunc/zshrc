@@ -1,4 +1,4 @@
-PROMPT=': %{$fg[green]%}%~%{$fg_bold[blue]%}$(git_prompt_info)%{$reset_color%}; '
+PROMPT=': ${SSH_TTY:+$fg[cyan]%n@%m$reset_color:}%{$fg[green]%}%~%{$fg_bold[blue]%}$(git_prompt_info)%{$reset_color%}; '
 
 ZSH_THEME_GIT_PROMPT_PREFIX="("
 ZSH_THEME_GIT_PROMPT_SUFFIX=")"
