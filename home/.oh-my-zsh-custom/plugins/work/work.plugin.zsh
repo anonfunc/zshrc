@@ -11,6 +11,9 @@ autoload +X wd wkill wdnice
 
 if [[ -f "/Library/Application Support/TrendMicro/TmccMac/iCoreStop.sh" ]]
 then
-    echo "Sudo to disable useless TrendMicro."
-    sudo "/Library/Application Support/TrendMicro/TmccMac/iCoreStop.sh" 
+    if ps aux | grep -q '[i]CoreService'
+    then
+        echo "Sudo to disable useless TrendMicro."
+        sudo "/Library/Application Support/TrendMicro/TmccMac/iCoreStop.sh" 
+    fi
 fi
