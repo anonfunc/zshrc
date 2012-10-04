@@ -6,3 +6,11 @@
 zstyle ':completion:*:git:*' user-commands ${${(k)commands[(I)git-*]}#git-}
 
 autoload +X wd wkill wdnice
+
+# Disable TrendMicro, if exists.
+
+if [[ -f "/Library/Application Support/TrendMicro/TmccMac/iCoreStop.sh" ]]
+then
+    echo "Sudo to disable useless TrendMicro."
+    sudo "/Library/Application Support/TrendMicro/TmccMac/iCoreStop.sh" 
+fi
