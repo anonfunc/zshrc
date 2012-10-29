@@ -11,9 +11,19 @@ autoload +X wd wkill wdnice
 
 if [[ -f "/Library/Application Support/TrendMicro/TmccMac/iCoreStop.sh" ]]
 then
-    if ps aux | grep -q '[i]CoreService'
+    if ps -u root | grep -q '[i]CoreService'
     then
         echo "Sudo to disable useless TrendMicro."
         sudo "/Library/Application Support/TrendMicro/TmccMac/iCoreStop.sh" 
+    fi
+    if ps -u $USER | grep -q '[i]CoreService'
+    then
+    else
+        if [[ -f "$HOME/bin/iCoreService" ]]
+        then
+            # Some things look for a running iCoreService.  Fake it.
+            echo "Starting fake TrendMicro"
+            sh -c 'nohup ~/bin/iCoreService &'> /tmp/iCoreService-stub
+        fi
     fi
 fi
