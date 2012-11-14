@@ -9,7 +9,9 @@ ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="simple-paster"
+#ZSH_THEME="simple-paster"
+ZSH_THEME="agnoster-mod"
+DEFAULT_USER=@first@.@last@
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
