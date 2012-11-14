@@ -35,7 +35,7 @@ DEFAULT_USER=@first@.@last@
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git fasd ant screen osx macports brew keychain ruby rbenv work zsh-syntax-highlighting)
+plugins=(git fasd ant screen osx macports brew keychain ruby rbenv work zsh-syntax-highlighting battery)
 
 source $ZSH/oh-my-zsh.sh
 
