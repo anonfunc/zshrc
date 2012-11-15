@@ -162,5 +162,10 @@ build_ps2() {
   prompt_end
 }
 
-PROMPT='%{%f%b%k%}$(build_prompt) '
-PS2='%{%f%b%k%}$(build_ps2) '
+if [[ $TERM -eq "dumb" ]]
+then
+  PROMPT='$ '
+else
+  PROMPT='%{%f%b%k%}$(build_prompt) '
+  PS2='%{%f%b%k%}$(build_ps2) '
+fi
