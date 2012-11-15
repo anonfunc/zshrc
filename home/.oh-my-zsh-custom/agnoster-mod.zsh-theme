@@ -162,7 +162,7 @@ build_ps2() {
   prompt_end
 }
 
-if [[ $TERM -eq "dumb" ]]
+if [[ "$TERM" -eq "dumb" ]]
 then
   PROMPT='$ '
 else
