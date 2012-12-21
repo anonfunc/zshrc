@@ -40,3 +40,5 @@ plugins=(git fasd ant screen osx macports brew keychain ruby rbenv work zsh-synt
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+
+[ -s "/Users/@first@.@last@/.scm_breeze/scm_breeze.sh" ] && source "/Users/@first@.@last@/.scm_breeze/scm_breeze.sh"
