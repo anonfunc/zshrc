@@ -27,3 +27,21 @@ then
         fi
     fi
 fi
+if [[ -f "/Library/LaunchDaemons/BESAgentDaemon.plist" ]]
+then
+    if ps -u root | grep -q '[B]ESAgent'
+    then
+        echo "Sudo to disable useless BigFix."
+        sudo launchctl remove com.bigfix.BESAgent
+    fi
+    if ps -u $USER | grep -q '[B]ESAgent'
+    then
+    else
+        if [[ -f "$HOME/bin/BESAgent" ]]
+        then
+            # Some things look for a running iCoreService.  Fake it.
+            echo "Starting fake BESAgent"
+            sh -c 'nohup ~/bin/BESAgent &'> /tmp/BESAgent-stub
+        fi
+    fi
+fi
