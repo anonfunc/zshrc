@@ -9,9 +9,12 @@ ZSH_CUSTOM=$HOME/.oh-my-zsh-custom
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-#ZSH_THEME="simple-paster"
-ZSH_THEME="agnoster-mod"
+ZSH_THEME="simple-paster"
+#ZSH_THEME="agnoster-mod"
 DEFAULT_USER=@first@.@last@
+
+#Tweak for virtualenvwrapper
+#export PATH="$PATH:/usr/local/share/python"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -35,10 +38,10 @@ DEFAULT_USER=@first@.@last@
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git fasd ant screen osx macports brew keychain ruby rbenv work zsh-syntax-highlighting battery)
+#plugins=(git fasd ant screen osx macports brew keychain ruby rbenv work zsh-syntax-highlighting battery )
+plugins=(git fasd ant screen osx macports brew keychain ruby work zsh-syntax-highlighting battery )
 
 source $ZSH/oh-my-zsh.sh
+export GIT=1
 
-# Customize to your needs...
-
-[ -s "/Users/@first@.@last@/.scm_breeze/scm_breeze.sh" ] && source "/Users/@first@.@last@/.scm_breeze/scm_breeze.sh"
+#PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
