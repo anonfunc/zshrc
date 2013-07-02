@@ -38,10 +38,9 @@ DEFAULT_USER=@first@.@last@
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-#plugins=(git fasd ant screen osx macports brew keychain ruby rbenv work zsh-syntax-highlighting battery )
-plugins=(git fasd ant screen osx macports brew keychain ruby work zsh-syntax-highlighting battery )
+#plugins=(git fasd ant screen osx macports brew keychain ruby rbenv zsh-syntax-highlighting battery )
+plugins=(git fasd ant screen osx macports brew keychain ruby zsh-syntax-highlighting battery )
 
 source $ZSH/oh-my-zsh.sh
-export GIT=1
 
 #PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
