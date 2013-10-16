@@ -1,4 +1,6 @@
 export WORKON_HOME=$HOME/.virtualenvs
+export EDITOR=/usr/local/bin/vim
+export VISUAL=/usr/local/bin/gvim
 
 export JAVA_HOME=/export/apps/jdk/JDK-1_6_0_27
 export JDK_HOME=/export/apps/jdk/JDK-1_6_0_27
