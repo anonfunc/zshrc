@@ -46,12 +46,15 @@ ZSH_CUSTOM=$HOME/.zsh-custom
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git zsh-syntax-highlighting fasd dircycle)
 
+
 if [[ $( uname ) == 'Darwin' ]]
 then
-  plugins+=(osx brew battery)
+  plugins+=(osx brew battery my-mac)
 else
   plugins+=(pip tmux virtualenv virtualenvwrapper)
 fi
+
+plugins+=(pip tmux virtualenv virtualenvwrapper)
 
 source $ZSH/oh-my-zsh.sh
 
