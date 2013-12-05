@@ -8,17 +8,17 @@ tma () {
     fi
 
     # How many sessions active?
-    SESSIONS=$($tmux list-sessions 2> /dev/null | wc -l)
+    SESSIONS=$(tmux list-sessions 2> /dev/null | wc -l)
        # Create a sync'd client session OR create a master session.
     if [[ $SESSIONS == 0 ]]
     then
-        $tmux -2 new-session -s home
+        tmux -2 new-session -s home
     else
         # Is home attached?
-        if $tmux list-sessions | grep home: | grep -q attached
+        if tmux list-sessions | grep home: | grep -q attached
         then
             # Attach a new client
-            $tmux -2 new-session -d -t home -s "client-$$" \;\
+            tmux -2 new-session -d -t home -s "client-$$" \;\
                 set-option destroy-unattached \; \
                 attach-session -t "client-$$"
         else
