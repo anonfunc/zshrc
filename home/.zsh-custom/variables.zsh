@@ -13,9 +13,6 @@ export LC_CTYPE=en_US.UTF-8
 export M2_HOME=/local/maven
 export M2=$M2_HOME/bin
 
-export PATH=/usr/local/bin:/usr/local/mysql/bin:/usr/local/workplace/bin:$PATH:$JAVA_HOME/bin
-export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
-#export PATH="/export/apps/xtools/bin:$PATH"
 export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 export LEOHOME="$HOME/code/network_trunk"
 export LEO_HOME="$LEOHOME"
