@@ -10,7 +10,7 @@ tma () {
     # How many sessions active?
     SESSIONS=$(tmux list-sessions 2> /dev/null | wc -l)
        # Create a sync'd client session OR create a master session.
-    if [[ $SESSIONS == 0 ]]
+    if [[ $SESSIONS -eq 0 ]]
     then
         tmux -2 new-session -s home
     else
