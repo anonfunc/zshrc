@@ -16,3 +16,6 @@ export M2=$M2_HOME/bin
 export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 export LEOHOME="$HOME/code/network_trunk"
 export LEO_HOME="$LEOHOME"
+
+# Shorter TMPDIR needed
+export TMPDIR=/tmp
