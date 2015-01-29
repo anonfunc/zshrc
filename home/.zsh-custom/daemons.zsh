@@ -30,4 +30,4 @@ showrunningstatus () {
     done
 }
 
-showrunningstatus znc btsync
+#showrunningstatus znc btsync
