@@ -8,12 +8,9 @@ tma () {
     fi
 
     # How many sessions active?
-    SESSIONS=$(tmux list-sessions 2> /dev/null | wc -l)
        # Create a sync'd client session OR create a master session.
-    if [[ $SESSIONS -eq 0 ]]
+    if tmux list-sessions 2> /dev/null | grep -q home > /dev/null
     then
-        tmux -2 new-session -s home
-    else
         # Is home attached?
         if tmux list-sessions | grep home: | grep -q attached
         then
@@ -25,5 +22,18 @@ tma () {
             # Attach to home.  Home isn't auto-detached, so this isn't perfect.
             tmux -2 attach-session -t home
         fi
+    else
+        tmux -2 new-session -s home
     fi
+}
+
+tmux_pair () {
+  tmux -2 -S /tmp/tmux_socket new-session -d -s pair_home
+  chmod ugo+rwx /tmp/tmux_socket
+  tmux -2 -S /tmp/tmux_socket attach-session -t home
+  rm -f /tmp/tmux_socket
+}
+
+tmux_pair_attach () {
+  tmux -2 -S /tmp/tmux_socket new-session -d -t pair_home -s "client-$USER" \; set-option destroy-unattached \; attach-session -t "client-$USER"
 }
