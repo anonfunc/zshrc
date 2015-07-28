@@ -59,11 +59,17 @@ if [[ $( uname ) == 'Darwin' ]]
 then
   plugins+=(osx brew battery my-mac)
 else
-  plugins+=(pip tmux virtualenv virtualenvwrapper)
+  plugins+=(virtualenvwrapper)
 fi
 
-plugins+=(pip tmux virtualenv virtualenvwrapper)
+plugins+=(pip tmux virtualenvwrapper)
+
+plugins+=(ull-completions)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+if [[ -d ~/.rvm ]]
+then
+  export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+fi
