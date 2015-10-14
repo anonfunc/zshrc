@@ -13,7 +13,11 @@ if [[ $OSTYPE == 'linux-gnu' && ! -d ~/.fonts ]]
 then
   ZSH_THEME="simple-paster"
 else
-  ZSH_THEME="agnoster"
+  ZSH_THEME="simple-paster2"
+  #ZSH_THEME="agnoster"
+  #ZSH_THEME="bullet-train"
+  #ZSH_THEME="philips"
+  #ZSH_THEME="bira"
 fi
 # Custom custom directory
 #
@@ -62,7 +66,7 @@ else
   plugins+=(virtualenvwrapper)
 fi
 
-plugins+=(pip tmux virtualenvwrapper)
+plugins+=(pip tmux virtualenv virtualenvwrapper)
 
 plugins+=(ull-completions)
 
